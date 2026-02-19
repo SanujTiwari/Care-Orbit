@@ -20,14 +20,6 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/appointments", require("./routes/appointmentRoutes"));
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
-
-  app.get('/*', (req, res) => {
-  res.send('API Running');
-});
-
-}
 
 const PORT = process.env.PORT || 5000;
 
