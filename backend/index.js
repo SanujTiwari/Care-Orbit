@@ -20,6 +20,10 @@ app.use(express.json());
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/appointments", require("./routes/appointmentRoutes"));
 
+app.get("/", (req, res) => {
+  res.send("Care Orbit API is running");
+});
+
 
 const PORT = process.env.PORT || 5000;
 
